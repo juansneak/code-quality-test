@@ -23,15 +23,12 @@ class Login {
 
   // Checks if user exists
   userExists(user) {
-    // Temp variable for storing the user if found
-    let temp = '';
     for (let i of this.users) {
       if (i === user) {
-        temp = user;
+        return true;
       }
     }
-    let exists = (temp !== '' && temp === user);
-    return exists;
+    return false;
   }
 
   // Register user
