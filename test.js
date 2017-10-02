@@ -54,13 +54,7 @@ class Login {
 
   updatePassword(user, oldPassword, newPassword) {
     // First we check if the user exists
-    let user1 = '';
-    for (let i of this.users) {
-      if (i === user) {
-        user1 = user;
-      }
-    }
-    if (user1 === user) {
+    if(this.userExists(user)){
       let index = this.idx(user, this.users);
       if (this.passwords[index] === oldPassword) {
         this.passwords[index] = newPassword;
