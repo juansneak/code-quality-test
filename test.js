@@ -13,11 +13,11 @@ class Login {
   }
 
   logout(user) {
-    this.sessions.forEach((session, i) => {
-      if (session === user) {
+    for (let i=0; i<this.sessions.length; i++) {
+      if(this.sessions[i]===user){
         this.sessions[i] = null;
       }
-    });
+    }
     this.sessions = this.sessions.filter(session => session !== null);
   }
 
